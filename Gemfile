@@ -35,7 +35,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 # Place to hold secrets 
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
-
+# Google Oauth
+gem 'omniauth-google-oauth2'
 
 
 # ** Styling Gems ** 
