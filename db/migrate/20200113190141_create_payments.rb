@@ -1,9 +1,10 @@
 class CreatePayments < ActiveRecord::Migration[6.0]
   def change
     create_table :payments do |t|
-      t.int :amount_owed
-      t.int :amount_paid
+      t.integer :amount_owed
+      t.integer :amount_paid
       t.string :due_date
+      t.integer :rental_property_id
 
       t.timestamps
     end

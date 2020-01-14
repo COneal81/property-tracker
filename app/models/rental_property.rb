@@ -1,6 +1,6 @@
 class RentalProperty < ApplicationRecord
     belongs_to :user
-    has_many :tentants
     has_many :repairs
-    has_many :payments, through: :tentants
+    has_many :tentants
+    has_many :payments, throught: :tentants
 end

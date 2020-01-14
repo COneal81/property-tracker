@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :lockable
 
   has_many :rental_properties
+  
   has_many :tentants, through: :rental_properties
   has_many :repairs, through: :rental_properties
   has_many :payments, through: :rental_properties
