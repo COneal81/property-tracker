@@ -13,23 +13,22 @@
     
     <%= render "partial/alerts" %>
     <%= render "partial/nav" %>
-     
+     <%= render 'partial/jumbotron' %>
 
 
 
-<main role="main">
-
-  <%= render 'partial/jumbotron' %>
-
-  <div class="container">
-    
-    
-    <%= yield %>
-
-    <hr>
+    <main role="main">
 
   
 
-</div>
+    <div class="container">
+    
+    
+      <%= yield %>
+
+    <hr>
+    </div>
+    
   </body>
+  <%= render 'partial/footer' %>
 </html>
