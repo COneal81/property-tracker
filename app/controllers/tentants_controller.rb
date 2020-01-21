@@ -1,2 +1,0 @@
-class TentantsController < ApplicationController
-end

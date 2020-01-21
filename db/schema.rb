@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2020_01_13_190141) do
 
   create_table "rental_properties", force: :cascade do |t|
     t.string "property_name"
-    t.text "description"
+    t.text "property_description"
     t.string "address"
-    t.string "monthly_rental_amount"
-    t.string "deposit_amount"
+    t.integer "monthly_rental_amount"
+    t.integer "deposit_amount"
     t.integer "square_feet"
     t.boolean "leased", default: false
     t.string "contract_start_date"
@@ -40,56 +40,36 @@ ActiveRecord::Schema.define(version: 2020_01_13_190141) do
   end
 
   create_table "repairs", force: :cascade do |t|
-    t.boolean "repair_needed", default: false
-    t.text "description"
-    t.string "repair_cost"
+    t.boolean "repair_needed", default: true
+    t.text "repair_description"
+    t.integer "repair_cost"
     t.boolean "repair_completed", default: false
     t.integer "rental_property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tentants", force: :cascade do |t|
-    t.string "name_1"
-    t.string "name_2"
-    t.string "name_3"
+  create_table "tenants", force: :cascade do |t|
+    t.string "renter"
+    t.string "co_renter"
     t.string "address"
-    t.string "email_1"
-    t.string "email_2"
-    t.string "email_3"
-    t.string "phone_1"
-    t.string "phone_2"
-    t.string "phone_3"
-    t.string "payment_date"
-    t.string "deposit_amount_paid"
-    t.string "monthly_rental_amount_due"
+    t.string "renter_email"
+    t.string "co_renter_email"
+    t.string "renter_cell_phone"
+    t.string "co_renter_cell_phone"
+    t.string "payment_due_date"
+    t.integer "deposit_amount_paid"
+    t.integer "monthly_rental_amount_due"
     t.integer "rental_property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
-    t.datetime "locked_at"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
