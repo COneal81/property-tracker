@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # , , :timeoutable, :trackable  , 
-  
+
+  has_secure_password
 
   has_many :rental_properties
   
