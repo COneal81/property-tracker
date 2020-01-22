@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :payments
-  resources :tentants
+  resources :tenants
   resources :repairs
   resources :rental_properties
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
