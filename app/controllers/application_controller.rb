@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
         current_user.admin if current_user
     end
 
-    def redirect__if_not_admin!
-        redirect__to rental_properties_path if !is_admin?
+    def redirect_if_not_admin!
+        redirect_to rental_properties_path if !is_admin?
     end
 end
