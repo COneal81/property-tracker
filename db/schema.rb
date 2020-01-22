@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_201416) do
+ActiveRecord::Schema.define(version: 2020_01_22_143118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2020_01_21_201416) do
     t.integer "amount_owed"
     t.integer "amount_paid"
     t.string "due_date"
-    t.integer "rental_property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_01_21_201416) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img_url"
+    t.integer "tenant_id"
+    t.integer "payment_id"
   end
 
   create_table "repairs", force: :cascade do |t|
@@ -61,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_01_21_201416) do
     t.string "payment_due_date"
     t.integer "deposit_amount_paid"
     t.integer "monthly_rental_amount_due"
-    t.integer "rental_property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

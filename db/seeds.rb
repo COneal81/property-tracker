@@ -23,52 +23,49 @@ red_ranch = RentalProperty.find_or_create_by(property_name: "Red Ranch", propert
 5 Bed/4 Bath!", 
 address: "1234 Main St. Countyline, NC 22222", monthly_rental_amount: 1500, 
 deposit_amount: 1500, square_feet: 2800, leased: true, contract_start_date: "12/1/19", contract_end_date: "12/1/20", user_id: kevin.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:HouseII2007.jpg")
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:HouseII2007.jpg", tenant_id: griffin.id, payment_id: pay_1.id)
 
 cape_cod = RentalProperty.find_or_create_by(property_name: "Cape Cod", property_description: "Cute and cozy!  2 Bed ~ 1.5 Bath", 
 address: "123 Liberty Rd Liberty, NC 22221", monthly_rental_amount: 800, 
 deposit_amount: 800, square_feet: 1500, leased: false, contract_start_date: "N/A", contract_end_date: "N/A", user_id: kevin.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Cape_Cod_style_house.jpg")
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Cape_Cod_style_house.jpg", tenant_id: , payment_id: )
 
 blue_bungalow = RentalProperty.find_or_create_by(property_name: "Blue Bungalow", property_description: "Front porch living at its best!  
 4 Bed ~ 3 
 Bath", address: "456 Market St Coffee, NC 22254", monthly_rental_amount: 1100, 
 deposit_amount: 1500, square_feet: 2490, leased: true, contract_start_date: "1/1/20", contract_end_date: "2/1/21", user_id: wyatt.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Abernathy-Shaw_House_c.1908.jpg")
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Abernathy-Shaw_House_c.1908.jpg", tenant_id: , payment_id: )
 
 farm_house = RentalProperty.find_or_create_by(property_name: "Farm House", property_description: "Nestled on 20 acres, this farm house is 
 surraounded by whispering pines.  5 Bed ~ 4.5 Bath  Includes a 10 stall horse ban and 5 pastures.", 
 address: "7899 Hidden Valley Rd Farmland, NC 22298", monthly_rental_amount: 2600, 
 deposit_amount: 3000, square_feet: 3500, leased: true, contract_start_date: "7/7/19", contract_end_date: "7/7/20", user_id: wyatt.id, 
-img_url: "https://en.wikipedia.org/wiki/Farm#/media/File:Farming_near_Klingerstown,_Pennsylvania.jpg")
+img_url: "https://en.wikipedia.org/wiki/Farm#/media/File:Farming_near_Klingerstown,_Pennsylvania.jpg", tenant_id: , payment_id: )
 
 
 
 #Tenant
 kari = Tenant.find_or_create_by(renter: "Kari Smith", co_renter: "N/A", address: "210 Cesna Lane Airport, IA 44444", 
 renter_email: "K@K.com", co_renter_email: "N/A", renter_cell_phone: "123-456-7890", 
-co_renter_cell_phone: "N/A", payment_due_date: "5th", deposit_amount_paid: 3000, monthly_rental_amount_due: 2600, 
-rental_property_id: farm_house.id)
+co_renter_cell_phone: "N/A", payment_due_date: "5th", deposit_amount_paid: 3000, monthly_rental_amount_due: 2600)
 
 hudson = Tenant.find_or_create_by(renter: "Hudson Jones", co_renter: "Hunter Jones", address: "2222 One Lane Rd Somewhere, OK 58949", 
 renter_email: "hud@hud.com", co_renter_email: "hunt@hunt.com", renter_cell_phone: "234-567-8901", 
-co_renter_cell_phone: "567-890-1234", payment_due_date: "15th", deposit_amount_paid: 1500, monthly_rental_amount_due: 1100, 
-rental_property_id: blue_bungalow.id)
+co_renter_cell_phone: "567-890-1234", payment_due_date: "15th", deposit_amount_paid: 1500, monthly_rental_amount_due: 1100)
 
 griffin = Tenant.find_or_create_by(renter: "Griffin Williams", co_renter: "Massey Williams", address: "4999 Slick Rd Snow, MN 58588", 
 renter_email: "griff@griff.com", co_renter_email: "mass@mass.com", renter_cell_phone: "987-987-9870", 
-co_renter_cell_phone: "987-543-2345", payment_due_date: "1st", deposit_amount_paid: 1500, monthly_rental_amount_due: 1500, 
-rental_property_id: red_ranch.id)
+co_renter_cell_phone: "987-543-2345", payment_due_date: "1st", deposit_amount_paid: 1500, monthly_rental_amount_due: 1500)
 
  
 
 
 #Payment
 
-pay_1 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date: "1st", rental_property_id: red_ranch.id)
-pay_2 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date: "1st", rental_property_id: red_ranch.id)
-pay_3 = Payment.find_or_create_by(amount_owed: 1100, amount_paid: 1000, due_date: "15th", rental_property_id: blue_bungalow.id)
-pay_4 = Payment.find_or_create_by(amount_owed: 2600, amount_paid: 2000, due_date: "5th", rental_property_id: farm_house.id)
+pay_1 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date: "1st")
+pay_2 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date: "1st")
+pay_3 = Payment.find_or_create_by(amount_owed: 1100, amount_paid: 1000, due_date: "15th")
+pay_4 = Payment.find_or_create_by(amount_owed: 2600, amount_paid: 2000, due_date: "5th")
 
 
 
