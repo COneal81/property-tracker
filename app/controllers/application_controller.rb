@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
         redirect_to new_session_path if !is_logged_in?
     end
 
-    def is_admin?
-        current_user.admin if current_user
-    end
+    # def is_admin?
+    #     current_user.admin if current_user
+    # end
 
-    def redirect_if_not_admin!
-        redirect_to rental_properties_path if !is_admin?
-    end
+    # def redirect_if_not_admin!
+    #     redirect_to rental_properties_path if !is_admin?
+    # end
 end
