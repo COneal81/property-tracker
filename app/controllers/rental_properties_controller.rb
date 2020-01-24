@@ -16,6 +16,8 @@ class RentalPropertiesController < ApplicationController
         @rental_property = RentalProperty.new(rental_property_params)
         if @rental_property.save
         redirect_to rental_property_path(@rental_property)
+        # Add else statement and a redirect once this is working
+        # Add Flash message
         end
     end
 
