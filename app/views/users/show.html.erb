@@ -4,58 +4,59 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Rental Properties</h4>
+        <h4 class="my-1 font-weight-normal">Rental Properties</h4>
       </div>
       
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <p> <%= link_to "Add a Rental Property", new_rental_property_path%> </p>
-        
-          <li>2 GB of storage</li>
-          <li>Email support</li>
-          <li>Help center access</li>
+          <li> <%= link_to "View All Properties", rental_properties_path%> </li>
+          <li> <%= link_to "Add a Property", new_rental_property_path%> </li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+       
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Repairs</h4>
+        <h4 class="my-1 font-weight-normal">Repairs</h4>
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>20 users included</li>
-          <li>10 GB of storage</li>
-          <li>Priority email support</li>
-          <li>Help center access</li>
+         <li> <%= link_to "View All Repairs", repairs_path%> </li>
+         <li> <%= link_to "Add a Repair", new_repair_path%> </li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Payments</h4>
+        <h4 class="my-1-font-weight-normal">Payments</h4>
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>30 users included</li>
-          <li>15 GB of storage</li>
-          <li>Phone and email support</li>
-          <li>Help center access</li>
+          <li> <%= link_to "View All Payments", payment_path%> </li>
+          <li> <%= link_to "Receive a Payment", new_payment_path%> </li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
       </div>
+
 
       
     </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-1 font-weight-normal">Tenants</h4>
+      </div>
+      
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li> <%= link_to "View All Tenants", tenants_path%> </li>
+          <li> <%= link_to "Add a Tenant", new_tenant_path%> </li>
+        </ul>
+       
+      </div>
   </div>
 
 
 
-<%= link_to "Rental Properties", rental_properties_path %><br><br>
-<%= link_to "Repairs", repairs_path %><br><br>
-<%= link_to "Tenants", tenants_path %><br><br>
-<%= link_to "Payments", payments_path %><br>
