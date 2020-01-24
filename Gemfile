@@ -30,8 +30,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Login/signup
-# Use Active Model has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# Use Active Model has_secure_password 
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 # Place to hold secrets 
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Google Oauth

@@ -6,10 +6,13 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.new(user_params)
+        # byebug
         if @user.save
-            session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            # session[:user_id] = user.id
+            #place a flash message saying that the user sucessfully signed up
+            redirect_to user_path(@user) 
         else
+            #place flash message as to why they were not signed up
             render :new
         end
     end
