@@ -14,8 +14,8 @@ Repair.destroy_all
 
 
 #User
-kevin = User.find_or_create_by(email: "k@k.com", password: "test123")
-wyatt = User.find_or_create_by(email: "w@w.com", password: "test123")
+# kevin = User.find_or_create_by(email: "k@k.com", password: "test123")
+# wyatt = User.find_or_create_by(email: "w@w.com", password: "test123")
 
 
 
