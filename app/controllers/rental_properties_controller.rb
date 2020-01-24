@@ -15,14 +15,14 @@ class RentalPropertiesController < ApplicationController
     def create
         @rental_property = RentalProperty.new(rental_property_params)
         if @rental_property.save
-        redirect_to rental_property_path(@rental_property)
+            redirect_to rental_property_path(@rental_property)
         # Add else statement and a redirect once this is working
         # Add Flash message
         end
     end
 
     def show
-
+        @rental_property = RentalProperty.find(params[:id])
     end
 
     def edit
@@ -54,6 +54,6 @@ class RentalPropertiesController < ApplicationController
     
        
     def find_rental_property
-        @rental_property = RentalProperty.find_by(id: params[:id])
+        @rental_property = RentalProperty.find(params[:id])
     end
 end
