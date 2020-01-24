@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :password, presence: true, length: { in: 4..20 }
+  validates :password, length: { in: 4..20 }
 
   has_many :rental_properties
   has_many :tenants, through: :rental_properties
