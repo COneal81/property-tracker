@@ -14,33 +14,8 @@ Repair.destroy_all
 
 
 #User
-kevin = User.find_or_create_by(email: "k@k.com", password_digest: "test123")
-wyatt = User.find_or_create_by(email: "w@w.com", password_digest: "test123")
-
-#Rental Property
-
-red_ranch = RentalProperty.find_or_create_by(property_name: "Red Ranch", property_description: "Spacious ranch home with a Texas feel!  
-5 Bed/4 Bath!", 
-address: "1234 Main St. Countyline, NC 22222", monthly_rental_amount: 1500, 
-deposit_amount: 1500, square_feet: 2800, leased: true, contract_start_date: "12/1/19", contract_end_date: "12/1/20", user_id: kevin.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:HouseII2007.jpg", tenant_id: griffin.id, payment_id: pay_1.id)
-
-cape_cod = RentalProperty.find_or_create_by(property_name: "Cape Cod", property_description: "Cute and cozy!  2 Bed ~ 1.5 Bath", 
-address: "123 Liberty Rd Liberty, NC 22221", monthly_rental_amount: 800, 
-deposit_amount: 800, square_feet: 1500, leased: false, contract_start_date: "N/A", contract_end_date: "N/A", user_id: kevin.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Cape_Cod_style_house.jpg", tenant_id: , payment_id: )
-
-blue_bungalow = RentalProperty.find_or_create_by(property_name: "Blue Bungalow", property_description: "Front porch living at its best!  
-4 Bed ~ 3 
-Bath", address: "456 Market St Coffee, NC 22254", monthly_rental_amount: 1100, 
-deposit_amount: 1500, square_feet: 2490, leased: true, contract_start_date: "1/1/20", contract_end_date: "2/1/21", user_id: wyatt.id, 
-img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Abernathy-Shaw_House_c.1908.jpg", tenant_id: , payment_id: )
-
-farm_house = RentalProperty.find_or_create_by(property_name: "Farm House", property_description: "Nestled on 20 acres, this farm house is 
-surraounded by whispering pines.  5 Bed ~ 4.5 Bath  Includes a 10 stall horse ban and 5 pastures.", 
-address: "7899 Hidden Valley Rd Farmland, NC 22298", monthly_rental_amount: 2600, 
-deposit_amount: 3000, square_feet: 3500, leased: true, contract_start_date: "7/7/19", contract_end_date: "7/7/20", user_id: wyatt.id, 
-img_url: "https://en.wikipedia.org/wiki/Farm#/media/File:Farming_near_Klingerstown,_Pennsylvania.jpg", tenant_id: , payment_id: )
+kevin = User.find_or_create_by(email: "k@k.com", password: "test123")
+wyatt = User.find_or_create_by(email: "w@w.com", password: "test123")
 
 
 
@@ -66,6 +41,35 @@ pay_1 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date
 pay_2 = Payment.find_or_create_by(amount_owed: 1500, amount_paid: 1500, due_date: "1st")
 pay_3 = Payment.find_or_create_by(amount_owed: 1100, amount_paid: 1000, due_date: "15th")
 pay_4 = Payment.find_or_create_by(amount_owed: 2600, amount_paid: 2000, due_date: "5th")
+pay_5 = Payment.find_or_create_by(amount_owed: 800, amount_paid: 1600, due_date: "5th")
+
+
+
+
+#Rental Property
+
+red_ranch = RentalProperty.find_or_create_by(property_name: "Red Ranch", property_description: "Spacious ranch home with a Texas feel!  
+5 Bed/4 Bath!", 
+address: "1234 Main St. Countyline, NC 22222", monthly_rental_amount: 1500, 
+deposit_amount: 1500, square_feet: 2800, leased: true, contract_start_date: "12/1/19", contract_end_date: "12/1/20", user_id: kevin.id, 
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:HouseII2007.jpg", tenant_id: griffin.id, payment_id: pay_1.id)
+
+cape_cod = RentalProperty.find_or_create_by(property_name: "Cape Cod", property_description: "Cute and cozy!  2 Bed ~ 1.5 Bath", 
+address: "123 Liberty Rd Liberty, NC 22221", monthly_rental_amount: 800, 
+deposit_amount: 800, square_feet: 1500, leased: false, contract_start_date: "N/A", contract_end_date: "N/A", user_id: kevin.id, 
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Cape_Cod_style_house.jpg", tenant_id: griffin.id , payment_id: pay_5.id)
+
+blue_bungalow = RentalProperty.find_or_create_by(property_name: "Blue Bungalow", property_description: "Front porch living at its best!  
+4 Bed ~ 3 
+Bath", address: "456 Market St Coffee, NC 22254", monthly_rental_amount: 1100, 
+deposit_amount: 1500, square_feet: 2490, leased: true, contract_start_date: "1/1/20", contract_end_date: "2/1/21", user_id: wyatt.id, 
+img_url: "https://en.wikipedia.org/wiki/List_of_house_styles#/media/File:Abernathy-Shaw_House_c.1908.jpg", tenant_id: hudson.id, payment_id: pay_3.id )
+
+farm_house = RentalProperty.find_or_create_by(property_name: "Farm House", property_description: "Nestled on 20 acres, this farm house is 
+surraounded by whispering pines.  5 Bed ~ 4.5 Bath  Includes a 10 stall horse ban and 5 pastures.", 
+address: "7899 Hidden Valley Rd Farmland, NC 22298", monthly_rental_amount: 2600, 
+deposit_amount: 3000, square_feet: 3500, leased: true, contract_start_date: "7/7/19", contract_end_date: "7/7/20", user_id: wyatt.id, 
+img_url: "https://en.wikipedia.org/wiki/Farm#/media/File:Farming_near_Klingerstown,_Pennsylvania.jpg", tenant_id: kari.id, payment_id: pay_4.id )
 
 
 
