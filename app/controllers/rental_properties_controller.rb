@@ -1,7 +1,7 @@
 class RentalPropertiesController < ApplicationController
 
     before_action :authenticate_user!
-    before_action :find_rental_property, only: [:show, :edit, :update]
+    before_action :find_rental_property, only: [:show, :edit, :update, :destroy]
     # before_action :redirect_if_not_admin?, only: [:new, :create]
 
     def index
@@ -33,6 +33,16 @@ class RentalPropertiesController < ApplicationController
         redirect_to rental_property_path(@rental_property)
     end
 
+    def destroy
+        if @rental_property
+            @rental_property.destroy
+            #Display flash message here
+            redirect_to rental_properties_path
+        else
+             #Display flash message here
+            redirect_to rental_properties_path
+        end
+    end
 
     private
     
