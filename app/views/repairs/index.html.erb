@@ -1,6 +1,6 @@
 <h1> All Repairs </h1>
 
-<%= @repairs.each do |repair|%>
+<% @repairs.each do |repair|%>
 <%= repair.repair_description%>
-<%= repair.repair.cost%>
+<%= repair.repair_cost%>
 <% end %>

@@ -1,0 +1,17 @@
+<h1> Receive a Payment </h1>
+<div>
+        <%= form_for(@payment) do |f| %>
+        <strong><%= f.label :amount_owed %></strong>
+        <%= f.text_field :amount_owed, class:"form-control" %><br>
+        <strong><%= f.label :amount_paid %></strong>
+        <%= f.text_field :amount_paid, class:"form-control" %><br>
+        
+        <strong><%= f.label :due_date %></strong>
+        <%= f.text_field :due_date, class:"form-control" %><br>
+        
+
+        <%= f.submit "Record Payment" %>
+        <% end %>
+    </div>
+
+    

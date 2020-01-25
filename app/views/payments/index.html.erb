@@ -1,0 +1,6 @@
+<h1> All Payments Received </h1>
+
+<% @payments.each do |payment|%>
+
+Amount Paid <%= link_to payment.amount_paid%><br>
+<% end %>
